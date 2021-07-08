@@ -1,6 +1,7 @@
 import 'package:arrivederci/shared/themes/app_colors.dart';
 import 'package:arrivederci/shared/themes/app_text_styles.dart';
 import 'package:flutter/material.dart';
+import 'package:arrivederci/shared/Constants.dart';
 
 class Register extends StatefulWidget {
   const Register({Key? key}) : super(key: key);
@@ -90,8 +91,11 @@ class _RegisterState extends State<Register> {
                       onPrimary: AppColors.primary,
                       side: BorderSide(color: AppColors.primary),
                     ),
-                    onPressed: () {},
                     child: Text('JÁ POSSUI CONTA?'),
+                    onPressed: () {
+                      Navigator.pop(context);
+                      Navigator.of(context).pushNamed(LOGIN_SCREEN);
+                    },
                   ),
                 ),
               ],

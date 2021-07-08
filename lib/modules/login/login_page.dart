@@ -1,6 +1,7 @@
 import 'package:arrivederci/shared/themes/app_colors.dart';
 import 'package:arrivederci/shared/themes/app_text_styles.dart';
 import 'package:flutter/material.dart';
+import 'package:arrivederci/shared/Constants.dart';
 
 class Login extends StatefulWidget {
   const Login({Key? key}) : super(key: key);
@@ -55,7 +56,10 @@ class _LoginState extends State<Login> {
                       primary: AppColors.primary, // background
                       onPrimary: Colors.white, // foreground
                     ),
-                    onPressed: () {},
+                    onPressed: () {
+                      Navigator.pop(context);
+                      Navigator.of(context).pushNamed(HOME_SCREEN);
+                    },
                     child: Text('ENTRAR'),
                   ),
                 ),
@@ -69,7 +73,10 @@ class _LoginState extends State<Login> {
                       onPrimary: AppColors.primary,
                       side: BorderSide(color: AppColors.primary),
                     ),
-                    onPressed: () {},
+                    onPressed: () {
+                      Navigator.pop(context);
+                      Navigator.of(context).pushNamed(REGISTER_SCREEN);
+                    },
                     child: Text('CADASTRAR'),
                   ),
                 ),
