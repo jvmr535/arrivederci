@@ -1,6 +1,6 @@
-import 'package:arrivederci/modules/splash/splash_page.dart';
 import 'package:arrivederci/modules/home/home_page.dart';
 import 'package:arrivederci/modules/login/login_page.dart';
+import 'package:arrivederci/modules/splash/splash_page.dart';
 import 'package:arrivederci/shared/Constants.dart';
 import 'package:arrivederci/shared/themes/app_colors.dart';
 import 'package:flutter/material.dart';
