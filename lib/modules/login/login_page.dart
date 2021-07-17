@@ -85,7 +85,10 @@ class _LoginState extends State<Login> {
                   style: TextButton.styleFrom(
                     primary: AppColors.primary,
                   ),
-                  onPressed: () {},
+                  onPressed: () {
+                    Navigator.pop(context);
+                    Navigator.of(context).pushNamed(FORGOT_PASSWORD_SCREEN);
+                  },
                   child: Text("Esqueceu a senha?"),
                 )
               ],

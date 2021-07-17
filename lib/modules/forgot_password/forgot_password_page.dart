@@ -1,3 +1,4 @@
+import 'package:arrivederci/shared/Constants.dart';
 import 'package:arrivederci/shared/themes/app_colors.dart';
 import 'package:arrivederci/shared/themes/app_text_styles.dart';
 import 'package:flutter/material.dart';
@@ -58,7 +59,10 @@ class _ForgotPasswordState extends State<ForgotPassword> {
                       onPrimary: AppColors.primary,
                       side: BorderSide(color: AppColors.primary),
                     ),
-                    onPressed: () {},
+                    onPressed: () {
+                      Navigator.pop(context);
+                      Navigator.of(context).pushNamed(LOGIN_SCREEN);
+                    },
                     child: Text('VOLTAR'),
                   ),
                 ),
