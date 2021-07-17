@@ -32,4 +32,10 @@ class TextStyles {
     fontWeight: FontWeight.w300,
     color: AppColors.primary,
   );
+
+  static final textWhite = GoogleFonts.roboto(
+    fontSize: 14,
+    fontWeight: FontWeight.w500,
+    color: AppColors.white,
+  );
 }
