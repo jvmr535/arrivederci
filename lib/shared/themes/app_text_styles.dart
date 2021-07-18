@@ -38,4 +38,10 @@ class TextStyles {
     fontWeight: FontWeight.w500,
     color: AppColors.white,
   );
+
+  static final textAbout = GoogleFonts.roboto(
+    fontSize: 20,
+    fontWeight: FontWeight.w300,
+    color: AppColors.black,
+  );
 }
