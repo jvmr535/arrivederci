@@ -1,9 +1,11 @@
+import 'package:arrivederci/modules/about/about_page.dart';
 import 'package:arrivederci/modules/forgot_password/forgot_password_page.dart';
 import 'package:arrivederci/modules/splash/splash_page.dart';
 import 'package:arrivederci/modules/home/home_page.dart';
 import 'package:arrivederci/modules/login/login_page.dart';
 import 'package:arrivederci/shared/Constants.dart';
 import 'package:arrivederci/shared/themes/app_colors.dart';
+import 'package:arrivederci/shared/widgets/add_goal_card/add_goal_card_widget.dart';
 import 'package:flutter/material.dart';
 import 'package:arrivederci/modules/register/register_page.dart';
 
@@ -20,12 +22,14 @@ class MyApp extends StatelessWidget {
         primarySwatch: Colors.purple,
         primaryColor: AppColors.primary,
       ),
-      home: Splash(),
+      // home: Splash(),
+      home: Login(),
       routes: <String, WidgetBuilder>{
         HOME_SCREEN: (BuildContext context) => Home(),
         LOGIN_SCREEN: (BuildContext context) => Login(),
         REGISTER_SCREEN: (BuildContext context) => Register(),
         FORGOT_PASSWORD_SCREEN: (BuildContext context) => ForgotPassword(),
+        ABOUT: (BuildContext context) => About()
       },
     );
   }

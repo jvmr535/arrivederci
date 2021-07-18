@@ -46,7 +46,10 @@ class NavigationDrawer extends StatelessWidget {
           ListTile(
             leading: Icon(Icons.help),
             title: Text("Sobre"),
-            onTap: () {},
+            onTap: () {
+              Navigator.pop(context);
+              Navigator.of(context).pushNamed(ABOUT);
+            },
           )
         ],
       ),
