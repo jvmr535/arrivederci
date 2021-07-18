@@ -1,6 +1,7 @@
 import 'package:arrivederci/modules/forgot_password/forgot_password_page.dart';
 import 'package:arrivederci/modules/splash/splash_page.dart';
 import 'package:arrivederci/modules/home/home_page.dart';
+import 'package:arrivederci/modules/settings/settings_page.dart';
 import 'package:arrivederci/modules/login/login_page.dart';
 import 'package:arrivederci/shared/Constants.dart';
 import 'package:arrivederci/shared/themes/app_colors.dart';
