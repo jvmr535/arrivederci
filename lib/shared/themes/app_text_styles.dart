@@ -29,8 +29,8 @@ class TextStyles {
 
   static final textBlack = GoogleFonts.roboto(
     fontSize: 20,
-    fontWeight: FontWeight.w300,
-    color: AppColors.primary,
+    fontWeight: FontWeight.w400,
+    color: AppColors.black,
   );
 
   static final textWhite = GoogleFonts.roboto(

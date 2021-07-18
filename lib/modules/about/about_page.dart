@@ -4,7 +4,7 @@ import 'package:arrivederci/shared/widgets/navigation_drawer/navigation_drawer_w
 import 'package:flutter/material.dart';
 
 class About extends StatelessWidget {
-  const About({ Key? key }) : super(key: key);
+  const About({Key? key}) : super(key: key);
 
   @override
   Widget build(BuildContext context) {

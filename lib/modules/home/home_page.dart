@@ -19,7 +19,6 @@ class _HomeState extends State<Home> {
       ),
       body: LocationSearch(),
       drawer: NavigationDrawer(),
-
       bottomNavigationBar: AppFooter.footer,
     );
   }

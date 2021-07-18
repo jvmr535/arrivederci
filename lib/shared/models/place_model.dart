@@ -1,18 +1,17 @@
 class Place {
-  String streetNumber;
-  String street;
-  String city;
-  String zipCode;
+  String name;
+  String address;
+  String rating;
+  String photo;
 
-  Place({
-    required this.streetNumber,
-    required this.street,
-    required this.city,
-    required this.zipCode,
-  });
+  Place(
+      {required this.name,
+      required this.address,
+      required this.rating,
+      required this.photo});
 
   @override
   String toString() {
-    return 'Place(streetNumber: $streetNumber, street: $street, city: $city, zipCode: $zipCode)';
+    return 'Place(Nome : $name, endereço: $address, avaliação: $rating, referencia de imagem: $photo)';
   }
 }
