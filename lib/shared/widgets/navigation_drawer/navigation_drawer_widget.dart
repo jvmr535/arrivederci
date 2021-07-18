@@ -13,7 +13,10 @@ class NavigationDrawer extends StatelessWidget {
           ListTile(
             leading: Icon(Icons.home_filled),
             title: Text("Home"),
-            onTap: () {},
+            onTap: () {
+              Navigator.pop(context);
+              Navigator.of(context).pushNamed(HOME_SCREEN);
+            },
           ),
           ListTile(
             leading: Icon(Icons.library_books),
@@ -48,7 +51,7 @@ class NavigationDrawer extends StatelessWidget {
             title: Text("Sobre"),
             onTap: () {
               Navigator.pop(context);
-              Navigator.of(context).pushNamed(ABOUT);
+              Navigator.of(context).pushNamed(ABOUT_SCREEN);
             },
           )
         ],
