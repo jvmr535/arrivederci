@@ -1,7 +1,6 @@
 import 'package:arrivederci/shared/themes/app_colors.dart';
 import 'package:arrivederci/shared/themes/app_text_styles.dart';
 import 'package:flutter/material.dart';
-import 'package:arrivederci/shared/Constants.dart';
 
 class Settings extends StatefulWidget {
   const Settings({Key? key}) : super(key: key);

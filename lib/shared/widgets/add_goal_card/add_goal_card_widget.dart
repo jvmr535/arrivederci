@@ -1,6 +1,6 @@
+import 'package:arrivederci/shared/Constants.dart';
 import 'package:arrivederci/shared/models/place_model.dart';
 import 'package:arrivederci/shared/themes/app_colors.dart';
-import 'package:arrivederci/shared/themes/app_images.dart';
 import 'package:arrivederci/shared/themes/app_text_styles.dart';
 import 'package:arrivederci/shared/widgets/navigation_drawer/navigation_drawer_widget.dart';
 import 'package:flutter/material.dart';
@@ -8,8 +8,8 @@ import 'package:flutter/material.dart';
 class AddGoalCard extends StatelessWidget {
   final Place place;
 
-  const AddGoalCard({Key? key, required this.place}) : super(key: key);
-  final apiKey = "AIzaSyCARtvgT7eQVYhJ57NeI4jYn3kX5tPUZXg";
+  AddGoalCard({Key? key, required this.place}) : super(key: key);
+  final apiKey = GOOGLE_API_KEY;
   @override
   Widget build(BuildContext context) {
     final size = MediaQuery.of(context).size;
@@ -53,15 +53,10 @@ class AddGoalCard extends StatelessWidget {
                 subtitle: Text(this.place.address),
               ),
               Image.network(
-                'https://maps.googleapis.com/maps/api/place/photo?maxwidth=400&photoreference=${this.place.photo}&key=${apiKey}',
+                'https://maps.googleapis.com/maps/api/place/photo?maxwidth=400&photoreference=${this.place.photo}&key=$apiKey',
                 width: size.width,
                 height: size.height * 0.4,
               ),
-              // Image.asset(
-              //   AppImages.logo,
-              //   width: size.width,
-              //   height: size.height * 0.40,
-              // ),
               Text("Avaliação: ${this.place.rating}"),
               TextButton(
                 onPressed: () {

@@ -1,5 +1,6 @@
 import 'dart:convert';
 
+import 'package:arrivederci/shared/Constants.dart';
 import 'package:arrivederci/shared/models/place_model.dart';
 import 'package:arrivederci/shared/themes/app_colors.dart';
 import 'package:arrivederci/shared/widgets/add_goal_card/add_goal_card_widget.dart';
@@ -16,7 +17,7 @@ class LocationSearch extends StatefulWidget {
 class _LocationSearchState extends State<LocationSearch> {
   final searchTextController = new TextEditingController();
 
-  final apiKey = "AIzaSyCARtvgT7eQVYhJ57NeI4jYn3kX5tPUZXg";
+  final apiKey = GOOGLE_API_KEY;
 
   Future<Place> searchLocalization() async {
     final response = await http.get(Uri.parse(
