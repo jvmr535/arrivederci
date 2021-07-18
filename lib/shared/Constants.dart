@@ -8,7 +8,9 @@ String
     // ignore: non_constant_identifier_names
     FORGOT_PASSWORD_SCREEN = '/ForgotPasswordScreen',
     // ignore: non_constant_identifier_names
-    ABOUT_SCREEN = '/AboutScreen';
+    ABOUT_SCREEN = '/AboutScreen',
+    // ignore: non_constant_identifier_names
+    CRIAR_ROTEIRO = '/CriarRoteiro';
 
 String
     // ignore: non_constant_identifier_names

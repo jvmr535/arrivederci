@@ -94,9 +94,8 @@ class _LocationSearchState extends State<LocationSearch> {
                     height: 40,
                     child: ElevatedButton(
                       style: ElevatedButton.styleFrom(
-                        primary: AppColors.white,
-                        onPrimary: AppColors.primary,
-                        side: BorderSide(color: AppColors.primary),
+                        primary: AppColors.primary, // background
+                        onPrimary: Colors.white, // foreground
                       ),
                       onPressed: () async {
                         final place = await searchLocalization();

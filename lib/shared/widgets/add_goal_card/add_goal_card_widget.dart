@@ -1,6 +1,7 @@
 import 'package:arrivederci/shared/Constants.dart';
 import 'package:arrivederci/shared/models/place_model.dart';
 import 'package:arrivederci/shared/themes/app_colors.dart';
+import 'package:arrivederci/shared/themes/app_footer.dart';
 import 'package:arrivederci/shared/themes/app_text_styles.dart';
 import 'package:flutter/material.dart';
 
@@ -55,6 +56,7 @@ class AddGoalCard extends StatelessWidget {
           ),
         ),
       ),
+      bottomNavigationBar: AppFooter.footer,
     );
   }
 }
