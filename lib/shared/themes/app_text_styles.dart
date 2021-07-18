@@ -44,4 +44,16 @@ class TextStyles {
     fontWeight: FontWeight.w300,
     color: AppColors.black,
   );
+
+  static final textContact = GoogleFonts.roboto(
+    fontSize: 14,
+    fontWeight: FontWeight.w400,
+    color: AppColors.gray,
+  );
+
+  static final textProfile = GoogleFonts.roboto(
+    fontSize: 20,
+    fontWeight: FontWeight.w500,
+    color: AppColors.black,
+  );
 }
