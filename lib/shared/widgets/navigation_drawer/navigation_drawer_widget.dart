@@ -73,7 +73,10 @@ class NavigationDrawer extends StatelessWidget {
           ListTile(
             leading: Icon(Icons.add),
             title: Text("Criar roteiro"),
-            onTap: () {},
+            onTap: () {
+              Navigator.pop(context);
+              Navigator.of(context).pushNamed(CRIAR_ROTEIRO);
+            },
           ),
           ListTile(
             leading: Icon(Icons.share),

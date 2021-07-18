@@ -17,8 +17,8 @@ class _HomeState extends State<Home> {
       appBar: AppBar(
         title: Text("Home"),
       ),
-      body: LocationSearch(),
       drawer: NavigationDrawer(),
+      body: LocationSearch(),
       bottomNavigationBar: AppFooter.footer,
     );
   }
