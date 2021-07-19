@@ -14,20 +14,37 @@ class NavigationDrawer extends StatelessWidget {
           SizedBox(
             height: 20,
           ),
-          Align(
-            alignment: Alignment.centerLeft,
-            child: Container(
-              width: 70,
-              child: CircleAvatar(
-                radius: (25),
-                backgroundColor: Colors.white,
-                child: ClipRRect(
-                  borderRadius: BorderRadius.circular(50),
-                  child: Image.network(
-                      'http://wp.clicrbs.com.br/holofote/files/2013/11/jacar%C3%A9.jpg'),
+          Row(
+            children: [
+              Align(
+                alignment: Alignment.centerLeft,
+                child: Container(
+                  width: 70,
+                  child: CircleAvatar(
+                    radius: (25),
+                    backgroundColor: Colors.white,
+                    child: ClipRRect(
+                      borderRadius: BorderRadius.circular(50),
+                      child: Image.network(
+                          'http://wp.clicrbs.com.br/holofote/files/2013/11/jacar%C3%A9.jpg'),
+                    ),
+                  ),
                 ),
               ),
-            ),
+              Align(
+                alignment: Alignment.centerRight,
+                child: Container(
+                  width: 350,
+                  child: IconButton(
+                    icon: Icon(Icons.settings),
+                    onPressed: () {
+                      Navigator.pop(context);
+                      Navigator.of(context).pushNamed(SETTINGS_SCREEN);
+                    },
+                  ),
+                ),
+              ),
+            ],
           ),
           SizedBox(
             height: 20,

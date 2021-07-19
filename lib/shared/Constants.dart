@@ -10,7 +10,9 @@ String
     // ignore: non_constant_identifier_names
     ABOUT_SCREEN = '/AboutScreen',
     // ignore: non_constant_identifier_names
-    CRIAR_ROTEIRO = '/CriarRoteiro';
+    CRIAR_ROTEIRO = '/CriarRoteiro',
+    // ignore: non_constant_identifier_names
+    SETTINGS_SCREEN = '/SettingsScreen';
 
 String
     // ignore: non_constant_identifier_names
