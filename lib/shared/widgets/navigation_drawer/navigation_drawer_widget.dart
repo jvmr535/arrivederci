@@ -24,7 +24,7 @@ class NavigationDrawer extends StatelessWidget {
                 child: ClipRRect(
                   borderRadius: BorderRadius.circular(50),
                   child: Image.network(
-                      'http://wp.clicrbs.com.br/holofote/files/2013/11/jacar%C3%A9.jpg'),
+                      'https://imagem.natelinha.uol.com.br/grande/cdd428453207e15b76ac92aefde0b237.jpg'),
                 ),
               ),
             ),
@@ -68,14 +68,17 @@ class NavigationDrawer extends StatelessWidget {
           ListTile(
             leading: Icon(Icons.library_books),
             title: Text("Meus roteiros"),
-            onTap: () {},
+            onTap: () {
+              Navigator.pop(context);
+              Navigator.of(context).pushNamed(MY_TRAVEL_ITINERARY);
+            },
           ),
           ListTile(
             leading: Icon(Icons.add),
             title: Text("Criar roteiro"),
             onTap: () {
               Navigator.pop(context);
-              Navigator.of(context).pushNamed(CRIAR_ROTEIRO);
+              Navigator.of(context).pushNamed(CREATE_TRAVEL_ITINERARY);
             },
           ),
           ListTile(
