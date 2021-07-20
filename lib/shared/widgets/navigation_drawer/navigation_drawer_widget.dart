@@ -96,11 +96,6 @@ class NavigationDrawer extends StatelessWidget {
               Navigator.of(context).pushNamed(CREATE_TRAVEL_ITINERARY);
             },
           ),
-          ListTile(
-            leading: Icon(Icons.share),
-            title: Text("Compartilhar roteiro"),
-            onTap: () {},
-          ),
           Divider(
             color: AppColors.black,
             height: 20,
