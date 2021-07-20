@@ -36,35 +36,46 @@ class TravelItineraryCard extends StatelessWidget {
                   height: 300,
                 ),
                 Container(
+                  margin: EdgeInsets.only(
+                      top: 20.0, bottom: 20.0, left: 20.0, right: 20.0),
                   child: Text(this.travelItinerary.description),
                 ),
-                Row(
-                  mainAxisAlignment: MainAxisAlignment.spaceAround,
-                  children: [
-                    TextButton(
-                      onPressed: () {
-                        Navigator.push(
-                          context,
-                          MaterialPageRoute(
-                            builder: (context) => TravelDetailPage(),
+                Container(
+                  alignment: FractionalOffset.center,
+                  child: Row(
+                    mainAxisAlignment: MainAxisAlignment.end,
+                    children: [
+                      Container(
+                        margin: EdgeInsets.only(bottom: 10.0, right: 30.0),
+                        child: TextButton(
+                          onPressed: () {
+                            Navigator.push(
+                              context,
+                              MaterialPageRoute(
+                                builder: (context) => TravelDetailPage(),
+                              ),
+                            );
+                          },
+                          child: Text(
+                            "EDITAR",
+                            style: TextStyle(color: AppColors.primary),
                           ),
-                        );
-                      },
-                      child: Text(
-                        "EDITAR",
-                        style: TextStyle(color: AppColors.primary),
+                        ),
                       ),
-                    ),
-                    TextButton(
-                      onPressed: () {
-                        print("teste");
-                      },
-                      child: Text(
-                        "EXCLUIR",
-                        style: TextStyle(color: AppColors.primary),
+                      Container(
+                        margin: EdgeInsets.only(bottom: 10.0, right: 30.0),
+                        child: TextButton(
+                          onPressed: () {
+                            print("teste");
+                          },
+                          child: Text(
+                            "EXCLUIR",
+                            style: TextStyle(color: AppColors.primary),
+                          ),
+                        ),
                       ),
-                    ),
-                  ],
+                    ],
+                  ),
                 )
               ],
             ),
