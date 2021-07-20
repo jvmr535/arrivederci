@@ -1,3 +1,4 @@
+import 'package:arrivederci/modules/travel_itinerary_detail/travel_itinerary_detail_page.dart';
 import 'package:arrivederci/shared/models/travel_itinerary_detail_model.dart';
 import 'package:arrivederci/shared/themes/app_colors.dart';
 import 'package:arrivederci/shared/themes/app_text_styles.dart';
@@ -42,7 +43,12 @@ class TravelItineraryCard extends StatelessWidget {
                   children: [
                     TextButton(
                       onPressed: () {
-                        print("teste");
+                        Navigator.push(
+                          context,
+                          MaterialPageRoute(
+                            builder: (context) => TravelDetailPage(),
+                          ),
+                        );
                       },
                       child: Text(
                         "EDITAR",

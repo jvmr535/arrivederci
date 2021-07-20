@@ -7,9 +7,9 @@ import 'package:arrivederci/shared/themes/app_text_styles.dart';
 import 'package:flutter/material.dart';
 
 class TravelDetailPage extends StatelessWidget {
-  final TravelItinerary edit;
-  
-  const TravelDetailPage({ Key? key, required this.edit }) : super(key: key);
+  // final TravelItinerary edit;
+
+  const TravelDetailPage({Key? key}) : super(key: key);
 
   @override
   Widget build(BuildContext context) {
@@ -41,27 +41,20 @@ class TravelDetailPage extends StatelessWidget {
                   fit: BoxFit.fitWidth,
                 ),
                 Row(
-                  children: [
-                    Container(
-                      
-                      
-                    )
-                  ],
+                  children: [Container()],
                 ),
                 Row(
                   mainAxisAlignment: MainAxisAlignment.start,
                   children: [
                     Container(
-                      margin: EdgeInsets.only(left: 8.0, top: 8.0),
-                      child: Text(
-                        //"Avaliação: ${this.place.rating}"
-                        "Avaliação: 5.0",
-                        style: TextStyles.textDetails,
-                      )
-                    ),
+                        margin: EdgeInsets.only(left: 8.0, top: 8.0),
+                        child: Text(
+                          //"Avaliação: ${this.place.rating}"
+                          "Avaliação: 5.0",
+                          style: TextStyles.textDetails,
+                        )),
                   ],
                 ),
-
                 Row(
                   mainAxisAlignment: MainAxisAlignment.spaceBetween,
                   children: [
