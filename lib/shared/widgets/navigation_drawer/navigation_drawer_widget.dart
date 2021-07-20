@@ -14,38 +14,38 @@ class NavigationDrawer extends StatelessWidget {
           SizedBox(
             height: 20,
           ),
-          Row(
-            children: [
-              Align(
-                alignment: Alignment.centerLeft,
-                child: Container(
-                  width: 70,
-                  child: CircleAvatar(
-                    radius: (25),
-                    backgroundColor: Colors.white,
-                    child: ClipRRect(
-                      borderRadius: BorderRadius.circular(50),
-                      child: Image.network(
-                          'http://wp.clicrbs.com.br/holofote/files/2013/11/jacar%C3%A9.jpg'),
-                    ),
-                  ),
-                ),
-              ),
-              Align(
-                alignment: Alignment.centerRight,
-                child: Container(
-                  width: 350,
-                  child: IconButton(
-                    icon: Icon(Icons.settings),
-                    onPressed: () {
-                      Navigator.pop(context);
-                      Navigator.of(context).pushNamed(SETTINGS_SCREEN);
-                    },
-                  ),
-                ),
-              ),
-            ],
-          ),
+          // Row(
+          //   children: [
+          //     Align(
+          //       alignment: Alignment.centerLeft,
+          //       child: Container(
+          //         width: 70,
+          //         child: CircleAvatar(
+          //           radius: (10),
+          //           backgroundColor: Colors.white,
+          //           child: ClipRRect(
+          //             borderRadius: BorderRadius.circular(50),
+          //             child: Image.network(
+          //                 'http://wp.clicrbs.com.br/holofote/files/2013/11/jacar%C3%A9.jpg'),
+          //           ),
+          //         ),
+          //       ),
+          //     ),
+          //     Align(
+          //       alignment: Alignment.centerRight,
+          //       child: Container(
+          //         width: 350,
+          //         child: IconButton(
+          //           icon: Icon(Icons.settings),
+          //           onPressed: () {
+          //             Navigator.pop(context);
+          //             Navigator.of(context).pushNamed(SETTINGS_SCREEN);
+          //           },
+          //         ),
+          //       ),
+          //     ),
+          //   ],
+          // ),
           SizedBox(
             height: 20,
           ),
@@ -85,14 +85,17 @@ class NavigationDrawer extends StatelessWidget {
           ListTile(
             leading: Icon(Icons.library_books),
             title: Text("Meus roteiros"),
-            onTap: () {},
+            onTap: () {
+              Navigator.pop(context);
+              Navigator.of(context).pushNamed(MY_TRAVEL_ITINERARY);
+            },
           ),
           ListTile(
             leading: Icon(Icons.add),
             title: Text("Criar roteiro"),
             onTap: () {
               Navigator.pop(context);
-              Navigator.of(context).pushNamed(CRIAR_ROTEIRO);
+              Navigator.of(context).pushNamed(CREATE_TRAVEL_ITINERARY);
             },
           ),
           ListTile(

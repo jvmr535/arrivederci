@@ -56,4 +56,10 @@ class TextStyles {
     fontWeight: FontWeight.w500,
     color: AppColors.black,
   );
+
+    static final textDetails = GoogleFonts.roboto(
+    fontSize: 12,
+    fontWeight: FontWeight.w500,
+    color: AppColors.gray,
+  );
 }

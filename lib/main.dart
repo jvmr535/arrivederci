@@ -3,6 +3,7 @@ import 'package:arrivederci/modules/create_travel_itinerary/create_travel_itiner
 import 'package:arrivederci/modules/forgot_password/forgot_password_page.dart';
 import 'package:arrivederci/modules/home/home_page.dart';
 import 'package:arrivederci/modules/login/login_page.dart';
+import 'package:arrivederci/modules/my_travel_itineraries/my_travel_itineraries_page.dart';
 import 'package:arrivederci/modules/settings/settings_page.dart';
 import 'package:arrivederci/modules/splash/splash_page.dart';
 import 'package:arrivederci/shared/Constants.dart';
@@ -30,7 +31,9 @@ class MyApp extends StatelessWidget {
         LOGIN_SCREEN: (BuildContext context) => Login(),
         REGISTER_SCREEN: (BuildContext context) => Register(),
         FORGOT_PASSWORD_SCREEN: (BuildContext context) => ForgotPassword(),
-        CRIAR_ROTEIRO: (BuildContext context) => CreateTravelItinerary(),
+        CREATE_TRAVEL_ITINERARY: (BuildContext context) =>
+            CreateTravelItinerary(),
+        MY_TRAVEL_ITINERARY: (BuildContext context) => MyTravelItineraries(),
         ABOUT_SCREEN: (BuildContext context) => About(),
         SETTINGS_SCREEN: (BuildContext context) => Settings(),
       },
