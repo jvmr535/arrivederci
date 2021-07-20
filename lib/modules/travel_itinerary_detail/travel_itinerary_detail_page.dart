@@ -91,7 +91,7 @@ class TravelDetailPage extends StatelessWidget {
                         Container(
                           margin: EdgeInsets.only(left: 8.0, top: 8.0, bottom: 8.0),
                           child: Text(
-                            "Torre Eiffel",
+                            "Arco do Triunfo",
                             style: TextStyles.textBlack,
                           ),
                         ),
@@ -133,7 +133,7 @@ class TravelDetailPage extends StatelessWidget {
                         Container(
                           margin: EdgeInsets.only(left: 8.0, top: 8.0, bottom: 8.0),
                           child: Text(
-                            "Torre Eiffel",
+                            "Museu do Louvre",
                             style: TextStyles.textBlack,
                           ),
                         ),
