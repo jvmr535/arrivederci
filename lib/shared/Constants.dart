@@ -12,7 +12,9 @@ String
     // ignore: non_constant_identifier_names
     CREATE_TRAVEL_ITINERARY = '/CreateTravelItinerary',
     // ignore: non_constant_identifier_names
-    MY_TRAVEL_ITINERARY = '/MyTravelItinerary';
+    MY_TRAVEL_ITINERARY = '/MyTravelItinerary',
+    // ignore: non_constant_identifier_names
+    SETTINGS_SCREEN = '/SettingsScreen';
 
 String
     // ignore: non_constant_identifier_names
