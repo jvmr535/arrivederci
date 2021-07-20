@@ -50,7 +50,7 @@ class _MyTravelItinerariesState extends State<MyTravelItineraries> {
           );
         },
       ),
-      bottomNavigationBar: AppFooter.footer,
+      bottomNavigationBar: AppFooter(),
     );
   }
 }

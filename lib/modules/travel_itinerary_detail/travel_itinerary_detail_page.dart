@@ -83,7 +83,7 @@ class TravelDetailPage extends StatelessWidget {
           ),
         ),
       ),
-      bottomNavigationBar: AppFooter.footer,
+      bottomNavigationBar: AppFooter(),
     );
   }
 }

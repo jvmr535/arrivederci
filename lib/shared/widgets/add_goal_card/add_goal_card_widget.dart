@@ -56,7 +56,7 @@ class AddGoalCard extends StatelessWidget {
           ),
         ),
       ),
-      bottomNavigationBar: AppFooter.footer,
+      bottomNavigationBar: AppFooter(),
     );
   }
 }

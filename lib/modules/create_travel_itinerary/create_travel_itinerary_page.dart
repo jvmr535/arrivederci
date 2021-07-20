@@ -1,4 +1,5 @@
 import 'package:arrivederci/shared/themes/app_colors.dart';
+import 'package:arrivederci/shared/themes/app_footer.dart';
 import 'package:arrivederci/shared/themes/app_text_styles.dart';
 import 'package:flutter/material.dart';
 
@@ -55,6 +56,7 @@ class _CreateTravelItineraryState extends State<CreateTravelItinerary> {
           ),
         )
       ]),
+      bottomNavigationBar: AppFooter(),
     );
   }
 }

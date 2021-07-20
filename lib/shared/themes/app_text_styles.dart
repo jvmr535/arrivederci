@@ -39,6 +39,13 @@ class TextStyles {
     color: AppColors.white,
   );
 
+  static final textWhiteUnderlined = GoogleFonts.roboto(
+    fontSize: 14,
+    fontWeight: FontWeight.w500,
+    color: AppColors.white,
+    decoration: TextDecoration.underline,
+  );
+
   static final textAbout = GoogleFonts.roboto(
     fontSize: 20,
     fontWeight: FontWeight.w300,
@@ -57,7 +64,7 @@ class TextStyles {
     color: AppColors.black,
   );
 
-    static final textDetails = GoogleFonts.roboto(
+  static final textDetails = GoogleFonts.roboto(
     fontSize: 12,
     fontWeight: FontWeight.w500,
     color: AppColors.gray,

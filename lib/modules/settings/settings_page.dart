@@ -1,4 +1,5 @@
 import 'package:arrivederci/shared/themes/app_colors.dart';
+import 'package:arrivederci/shared/themes/app_footer.dart';
 import 'package:arrivederci/shared/themes/app_text_styles.dart';
 import 'package:flutter/material.dart';
 
@@ -14,6 +15,9 @@ class _SettingsState extends State<Settings> {
   Widget build(BuildContext context) {
     final size = MediaQuery.of(context).size;
     return Scaffold(
+      appBar: AppBar(
+        title: Text("Configurações"),
+      ),
       backgroundColor: AppColors.white,
       body: Stack(children: [
         Center(
@@ -21,11 +25,7 @@ class _SettingsState extends State<Settings> {
             child: Column(
               mainAxisAlignment: MainAxisAlignment.center,
               children: [
-                Text(
-                  "CONFIGURAÇÕES",
-                  style: TextStyles.pageTitle,
-                ),
-                SizedBox(height: 80.0),
+                SizedBox(height: 30.0),
                 Align(
                   alignment: Alignment.centerLeft,
                   child: Container(
@@ -162,6 +162,7 @@ class _SettingsState extends State<Settings> {
           ),
         )
       ]),
+      bottomNavigationBar: AppFooter(),
     );
   }
 }
