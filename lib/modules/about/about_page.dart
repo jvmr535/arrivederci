@@ -60,6 +60,7 @@ class About extends StatelessWidget {
           ),
         ),
       ),
+      bottomNavigationBar: AppFooter(),
     );
   }
 }

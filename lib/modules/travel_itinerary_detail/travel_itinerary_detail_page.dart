@@ -1,6 +1,4 @@
 import 'dart:ui';
-
-import 'package:arrivederci/shared/models/travel_itinerary_detail_model.dart';
 import 'package:arrivederci/shared/themes/app_colors.dart';
 import 'package:arrivederci/shared/themes/app_footer.dart';
 import 'package:arrivederci/shared/themes/app_text_styles.dart';
@@ -22,13 +20,13 @@ class TravelDetailPage extends StatelessWidget {
         child: Card(
           child: Container(
             width: size.width * 0.9,
-            height: size.height * 0.7,
+            height: size.height * 0.8,
             child: Column(
               children: [
                 ListTile(
                   title: Text(
                     //this.place.name,
-                    "Torre de Eiffel",
+                    "Viagem para França",
                     textAlign: TextAlign.center,
                     style: TextStyles.textBlack,
                   ),
@@ -40,9 +38,137 @@ class TravelDetailPage extends StatelessWidget {
                   height: size.height * 0.25,
                   fit: BoxFit.fitWidth,
                 ),
+
+                Divider(),
                 Row(
-                  children: [Container()],
+                  mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                  children: [
+                    Column(
+                      children: [
+                        Container(
+                          margin: EdgeInsets.only(left: 8.0, top: 8.0, bottom: 8.0),
+                          child: Text(
+                            "Torre Eiffel",
+                            style: TextStyles.textBlack,
+                          ),
+                        ),
+                      ],
+                    ),
+                    Row(
+                      children: [
+                        Container(
+                          margin: EdgeInsets.only(right: 10.0),
+                          child:Icon(
+                            Icons.info_outline,
+                            color: AppColors.primary,
+                            size: 26.0,
+                          ),
+                        ),
+                        Container(
+                          margin: EdgeInsets.only(right: 10.0),
+                          child:Icon(
+                            Icons.close,
+                            color: AppColors.primary,
+                            size: 26.0,
+                          ),
+                        ),
+                      ],
+                    ),
+                    
+                  ],
                 ),
+                Divider(
+                  color: AppColors.primary,
+                  indent: 10,
+                  endIndent: 20,
+                ),
+
+                Row(
+                  mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                  children: [
+                    Column(
+                      children: [
+                        Container(
+                          margin: EdgeInsets.only(left: 8.0, top: 8.0, bottom: 8.0),
+                          child: Text(
+                            "Torre Eiffel",
+                            style: TextStyles.textBlack,
+                          ),
+                        ),
+                      ],
+                    ),
+                    Row(
+                      children: [
+                        Container(
+                          margin: EdgeInsets.only(right: 10.0),
+                          child:Icon(
+                            Icons.info_outline,
+                            color: AppColors.primary,
+                            size: 26.0,
+                          ),
+                        ),
+                        Container(
+                          margin: EdgeInsets.only(right: 10.0),
+                          child:Icon(
+                            Icons.close,
+                            color: AppColors.primary,
+                            size: 26.0,
+                          ),
+                        ),
+                      ],
+                    ),
+                  ],
+                ),
+                Divider(
+                  color: AppColors.primary,
+                  indent: 10,
+                  endIndent: 20,
+                ),
+
+                Row(
+                  mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                  children: [
+                    Column(
+                      children: [
+                        Container(
+                          margin: EdgeInsets.only(left: 8.0, top: 8.0, bottom: 8.0),
+                          child: Text(
+                            "Torre Eiffel",
+                            style: TextStyles.textBlack,
+                          ),
+                        ),
+                      ],
+                    ),
+                    Row(
+                      children: [
+                        Container(
+                          margin: EdgeInsets.only(right: 10.0),
+                          child:Icon(
+                            Icons.info_outline,
+                            color: AppColors.primary,
+                            size: 26.0,
+                          ),
+                        ),
+                        Container(
+                          margin: EdgeInsets.only(right: 10.0),
+                          child:Icon(
+                            Icons.close,
+                            color: AppColors.primary,
+                            size: 26.0,
+                          ),
+                        ),
+                      ],
+                    ),
+                    
+                  ],
+                ),
+                Divider(
+                  color: AppColors.primary,
+                  indent: 10,
+                  endIndent: 20,
+                ),
+
+                Spacer(),
                 Row(
                   mainAxisAlignment: MainAxisAlignment.start,
                   children: [
@@ -50,7 +176,7 @@ class TravelDetailPage extends StatelessWidget {
                         margin: EdgeInsets.only(left: 8.0, top: 8.0),
                         child: Text(
                           //"Avaliação: ${this.place.rating}"
-                          "Avaliação: 5.0",
+                          "Roteiro da ultima viagem para a França",
                           style: TextStyles.textDetails,
                         )),
                   ],
