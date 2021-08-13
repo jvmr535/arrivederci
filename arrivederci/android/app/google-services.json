@@ -1,0 +1,40 @@
+{
+  "project_info": {
+    "project_number": "781356604469",
+    "firebase_url": "https://arrivederci-83fdd-default-rtdb.firebaseio.com",
+    "project_id": "arrivederci-83fdd",
+    "storage_bucket": "arrivederci-83fdd.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:781356604469:android:b5c772c8e7ef195d9f657c",
+        "android_client_info": {
+          "package_name": "com.example.arrivederci"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "781356604469-lrcfaieuuh4drth14drp1oaf6hr9u0du.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyDrMBj51Eml5X6E_YrV-QaTwNfXa7TVjxs"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "781356604469-lrcfaieuuh4drth14drp1oaf6hr9u0du.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
