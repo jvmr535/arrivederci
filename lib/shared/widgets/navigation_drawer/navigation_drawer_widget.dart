@@ -1,10 +1,11 @@
 import 'package:arrivederci/shared/Constants.dart';
 import 'package:arrivederci/shared/themes/app_colors.dart';
 import 'package:arrivederci/shared/themes/app_text_styles.dart';
+import 'package:firebase_auth/firebase_auth.dart';
 import 'package:flutter/material.dart';
 
 class NavigationDrawer extends StatelessWidget {
-  const NavigationDrawer({Key? key}) : super(key: key);
+  final auth = FirebaseAuth.instance;
 
   @override
   Widget build(BuildContext context) {
@@ -19,18 +20,6 @@ class NavigationDrawer extends StatelessWidget {
             child: Row(
               mainAxisAlignment: MainAxisAlignment.spaceBetween,
               children: [
-                Container(
-                  width: 90,
-                  child: CircleAvatar(
-                    radius: (30),
-                    backgroundColor: Colors.white,
-                    child: ClipRRect(
-                      borderRadius: BorderRadius.circular(50),
-                      child: Image.network(
-                          'http://wp.clicrbs.com.br/holofote/files/2013/11/jacar%C3%A9.jpg'),
-                    ),
-                  ),
-                ),
                 Container(
                   width: 90,
                   child: IconButton(
@@ -50,9 +39,9 @@ class NavigationDrawer extends StatelessWidget {
           Align(
             alignment: Alignment.centerLeft,
             child: Container(
-              width: 83,
+              // width: 83,
               child: Text(
-                "Aligator",
+                auth.currentUser!.displayName!,
                 style: TextStyles.textProfile,
                 textAlign: TextAlign.end,
               ),
@@ -63,7 +52,7 @@ class NavigationDrawer extends StatelessWidget {
             child: Container(
               width: 170,
               child: Text(
-                "contato@eotchan.com.br",
+                auth.currentUser!.email!,
                 style: TextStyles.textContact,
                 textAlign: TextAlign.end,
               ),
@@ -107,8 +96,13 @@ class NavigationDrawer extends StatelessWidget {
             leading: Icon(Icons.arrow_back),
             title: Text("Sair"),
             onTap: () {
-              Navigator.pop(context);
-              Navigator.of(context).pushNamed(LOGIN_SCREEN);
+              try {
+                auth.signOut();
+                Navigator.pop(context);
+                Navigator.of(context).pushNamed(LOGIN_SCREEN);
+              } catch (e) {
+                print("Falha ao realizar signout");
+              }
             },
           ),
           ListTile(
