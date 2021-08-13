@@ -25,7 +25,7 @@ class _SettingsState extends State<Settings> {
             child: Column(
               mainAxisAlignment: MainAxisAlignment.center,
               children: [
-                SizedBox(height: 30.0),
+                SizedBox(height: 10),
                 Align(
                   alignment: Alignment.centerLeft,
                   child: Container(
