@@ -9,10 +9,13 @@ import 'package:arrivederci/modules/splash/splash_page.dart';
 import 'package:arrivederci/shared/Constants.dart';
 import 'package:arrivederci/shared/themes/app_colors.dart';
 import 'package:arrivederci/modules/register/register_page.dart';
+import 'package:firebase_core/firebase_core.dart';
 import 'package:flutter/material.dart';
 import 'modules/about/about_page.dart';
 
-void main() {
+void main() async {
+  WidgetsFlutterBinding.ensureInitialized();
+  await Firebase.initializeApp();
   runApp(MyApp());
 }
 
