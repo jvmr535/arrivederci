@@ -1,4 +1,5 @@
 import 'package:arrivederci/shared/models/travel_itinerary_detail_model.dart';
+import 'package:arrivederci/shared/themes/app_colors.dart';
 import 'package:arrivederci/shared/themes/app_footer.dart';
 import 'package:arrivederci/shared/widgets/travel_itinerary/travel_itinerary_widget.dart';
 import 'package:flutter/material.dart';
@@ -37,6 +38,7 @@ class _MyTravelItinerariesState extends State<MyTravelItineraries> {
 
     return Scaffold(
       appBar: AppBar(
+        backgroundColor: AppColors.primary,
         title: Text("Meus roteiros"),
       ),
       body: ListView.builder(

@@ -11,6 +11,7 @@ class About extends StatelessWidget {
     final size = MediaQuery.of(context).size;
     return Scaffold(
       appBar: AppBar(
+        backgroundColor: AppColors.primary,
         title: Text("Sobre"),
       ),
       body: Card(

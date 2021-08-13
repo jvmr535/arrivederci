@@ -12,8 +12,8 @@ dependencies:
   flutter:
     sdk: flutter
   google_fonts: ^2.1.0
-  firebase_core: "^0.7.0"
-  firebase_auth: "^0.20.1"
+  firebase_core: "^1.4.0"
+  firebase_auth: "^3.0.1"
 
   cupertino_icons: ^1.0.2
   google_places_flutter: ^0.0.3

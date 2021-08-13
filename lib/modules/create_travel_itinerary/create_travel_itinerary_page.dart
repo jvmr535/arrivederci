@@ -16,6 +16,7 @@ class _CreateTravelItineraryState extends State<CreateTravelItinerary> {
     final size = MediaQuery.of(context).size;
     return Scaffold(
       appBar: AppBar(
+        backgroundColor: AppColors.primary,
         title: Text("Criar roteiro"),
       ),
       body: Stack(children: [

@@ -19,56 +19,58 @@ class _ForgotPasswordState extends State<ForgotPassword> {
       body: Stack(children: [
         Center(
           child: Container(
-            child: Column(
-              mainAxisAlignment: MainAxisAlignment.center,
-              children: [
-                Text(
-                  "RECUPERAÇÃO DE SENHA",
-                  style: TextStyles.pageTitle,
-                ),
-                SizedBox(height: 80.0),
-                Container(
-                  width: size.width * 0.8,
-                  child: TextField(
-                    decoration: InputDecoration(
-                      labelText: 'Email',
-                      border: OutlineInputBorder(),
+              child: SingleChildScrollView(
+              child: Column(
+                mainAxisAlignment: MainAxisAlignment.center,
+                children: [
+                  Text(
+                    "RECUPERAÇÃO DE SENHA",
+                    style: TextStyles.pageTitle,
+                  ),
+                  SizedBox(height: 80.0),
+                  Container(
+                    width: size.width * 0.8,
+                    child: TextField(
+                      decoration: InputDecoration(
+                        labelText: 'Email',
+                        border: OutlineInputBorder(),
+                      ),
                     ),
                   ),
-                ),
-                SizedBox(height: 20.0),
-                Container(
-                  width: size.width * 0.8,
-                  height: 40,
-                  child: ElevatedButton(
-                    style: ElevatedButton.styleFrom(
-                      primary: AppColors.primary, // background
-                      onPrimary: Colors.white, // foreground
+                  SizedBox(height: 20.0),
+                  Container(
+                    width: size.width * 0.8,
+                    height: 40,
+                    child: ElevatedButton(
+                      style: ElevatedButton.styleFrom(
+                        primary: AppColors.primary, // background
+                        onPrimary: Colors.white, // foreground
+                      ),
+                      onPressed: () {},
+                      child: Text('ENVIAR'),
                     ),
-                    onPressed: () {},
-                    child: Text('ENVIAR'),
                   ),
-                ),
-                SizedBox(height: 10.0),
-                Container(
-                  width: size.width * 0.8,
-                  height: 40,
-                  child: ElevatedButton(
-                    style: ElevatedButton.styleFrom(
-                      primary: AppColors.white,
-                      onPrimary: AppColors.primary,
-                      side: BorderSide(color: AppColors.primary),
+                  SizedBox(height: 10.0),
+                  Container(
+                    width: size.width * 0.8,
+                    height: 40,
+                    child: ElevatedButton(
+                      style: ElevatedButton.styleFrom(
+                        primary: AppColors.white,
+                        onPrimary: AppColors.primary,
+                        side: BorderSide(color: AppColors.primary),
+                      ),
+                      onPressed: () {
+                        Navigator.pop(context);
+                        Navigator.of(context).pushNamed(LOGIN_SCREEN);
+                      },
+                      child: Text('VOLTAR'),
                     ),
-                    onPressed: () {
-                      Navigator.pop(context);
-                      Navigator.of(context).pushNamed(LOGIN_SCREEN);
-                    },
-                    child: Text('VOLTAR'),
                   ),
-                ),
-                SizedBox(height: 10.0)
-              ],
-            ),
+                  SizedBox(height: 10.0)
+                ],
+              ),
+            )
           ),
         )
       ]),
