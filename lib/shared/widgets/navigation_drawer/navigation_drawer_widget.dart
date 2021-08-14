@@ -17,48 +17,50 @@ class NavigationDrawer extends StatelessWidget {
           SizedBox(
             height: 20,
           ),
-          Container(
-            alignment: FractionalOffset.center,
-            child: Row(
-              mainAxisAlignment: MainAxisAlignment.spaceBetween,
-              children: [
-                Container(
-                  width: 90,
-                  child: IconButton(
-                    icon: Icon(Icons.settings),
-                    onPressed: () {
-                      Navigator.pop(context);
-                      Navigator.of(context).pushNamed(SETTINGS_SCREEN);
-                    },
-                  ),
+          Row(
+            mainAxisAlignment: MainAxisAlignment.spaceAround,
+            children: [
+              Container(
+                width: 200,
+                child: Column(
+                  children: [
+                    Align(
+                      child: Container(
+                        alignment: Alignment.centerLeft,
+                        child: Text(
+                          auth.currentUser!.displayName!,
+                          style: TextStyles.textProfile,
+                        ),
+                      ),
+                    ),
+                    Align(
+                      child: Container(
+                        alignment: Alignment.centerLeft,
+                        child: Text(
+                          user!.email!,
+                          style: TextStyles.textContact,
+                        ),
+                      ),
+                    ),
+                  ],
                 ),
-              ],
-            ),
-          ),
-          SizedBox(
-            height: 20,
-          ),
-          Align(
-            alignment: Alignment.centerLeft,
-            child: Container(
-              // width: 83,
-              child: Text(
-                auth.currentUser!.displayName!,
-                style: TextStyles.textProfile,
-                textAlign: TextAlign.end,
               ),
-            ),
-          ),
-          Align(
-            alignment: Alignment.centerLeft,
-            child: Container(
-              width: 170,
-              child: Text(
-                user!.email!,
-                style: TextStyles.textContact,
-                textAlign: TextAlign.end,
+              Container(
+                child: Column(
+                  children: [
+                    Container(
+                      child: IconButton(
+                        icon: Icon(Icons.settings),
+                        onPressed: () {
+                          Navigator.pop(context);
+                          Navigator.of(context).pushNamed(SETTINGS_SCREEN);
+                        },
+                      ),
+                    ),
+                  ],
+                ),
               ),
-            ),
+            ],
           ),
           SizedBox(
             height: 20,
