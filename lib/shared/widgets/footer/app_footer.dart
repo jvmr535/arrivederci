@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:arrivederci/shared/Constants.dart';
-import 'app_colors.dart';
-import 'app_text_styles.dart';
+import '../../themes/app_colors.dart';
+import '../../themes/app_text_styles.dart';
 
 class AppFooter extends StatelessWidget {
   const AppFooter({Key? key}) : super(key: key);
