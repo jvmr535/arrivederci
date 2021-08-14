@@ -107,7 +107,6 @@ class _LoginState extends State<Login> {
                               );
                             }
                           } catch (e) {
-                            print(e);
                             ScaffoldMessenger.of(context).showSnackBar(
                               const SnackBar(
                                 content: Text("Erro ao fazer login"),
