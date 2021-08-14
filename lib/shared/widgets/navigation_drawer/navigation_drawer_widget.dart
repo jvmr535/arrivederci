@@ -9,6 +9,8 @@ class NavigationDrawer extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
+    User? user = auth.currentUser;
+
     return Drawer(
       child: ListView(
         children: [
@@ -52,7 +54,7 @@ class NavigationDrawer extends StatelessWidget {
             child: Container(
               width: 170,
               child: Text(
-                auth.currentUser!.email!,
+                user!.email!,
                 style: TextStyles.textContact,
                 textAlign: TextAlign.end,
               ),
