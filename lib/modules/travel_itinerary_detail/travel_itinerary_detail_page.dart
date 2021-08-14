@@ -1,6 +1,6 @@
 import 'dart:ui';
 import 'package:arrivederci/shared/themes/app_colors.dart';
-import 'package:arrivederci/shared/widgets/footer/app_footer.dart';
+import 'package:arrivederci/shared/widgets/app_footer/app_footer_widget.dart';
 import 'package:arrivederci/shared/themes/app_text_styles.dart';
 import 'package:flutter/material.dart';
 
@@ -39,7 +39,6 @@ class TravelDetailPage extends StatelessWidget {
                   height: size.height * 0.25,
                   fit: BoxFit.fitWidth,
                 ),
-
                 Divider(),
                 Row(
                   mainAxisAlignment: MainAxisAlignment.spaceBetween,
@@ -47,7 +46,8 @@ class TravelDetailPage extends StatelessWidget {
                     Column(
                       children: [
                         Container(
-                          margin: EdgeInsets.only(left: 8.0, top: 8.0, bottom: 8.0),
+                          margin:
+                              EdgeInsets.only(left: 8.0, top: 8.0, bottom: 8.0),
                           child: Text(
                             "Torre Eiffel",
                             style: TextStyles.textBlack,
@@ -59,7 +59,7 @@ class TravelDetailPage extends StatelessWidget {
                       children: [
                         Container(
                           margin: EdgeInsets.only(right: 10.0),
-                          child:Icon(
+                          child: Icon(
                             Icons.info_outline,
                             color: AppColors.primary,
                             size: 26.0,
@@ -67,7 +67,7 @@ class TravelDetailPage extends StatelessWidget {
                         ),
                         Container(
                           margin: EdgeInsets.only(right: 10.0),
-                          child:Icon(
+                          child: Icon(
                             Icons.close,
                             color: AppColors.primary,
                             size: 26.0,
@@ -75,7 +75,6 @@ class TravelDetailPage extends StatelessWidget {
                         ),
                       ],
                     ),
-                    
                   ],
                 ),
                 Divider(
@@ -83,14 +82,14 @@ class TravelDetailPage extends StatelessWidget {
                   indent: 10,
                   endIndent: 20,
                 ),
-
                 Row(
                   mainAxisAlignment: MainAxisAlignment.spaceBetween,
                   children: [
                     Column(
                       children: [
                         Container(
-                          margin: EdgeInsets.only(left: 8.0, top: 8.0, bottom: 8.0),
+                          margin:
+                              EdgeInsets.only(left: 8.0, top: 8.0, bottom: 8.0),
                           child: Text(
                             "Arco do Triunfo",
                             style: TextStyles.textBlack,
@@ -102,7 +101,7 @@ class TravelDetailPage extends StatelessWidget {
                       children: [
                         Container(
                           margin: EdgeInsets.only(right: 10.0),
-                          child:Icon(
+                          child: Icon(
                             Icons.info_outline,
                             color: AppColors.primary,
                             size: 26.0,
@@ -110,7 +109,7 @@ class TravelDetailPage extends StatelessWidget {
                         ),
                         Container(
                           margin: EdgeInsets.only(right: 10.0),
-                          child:Icon(
+                          child: Icon(
                             Icons.close,
                             color: AppColors.primary,
                             size: 26.0,
@@ -125,14 +124,14 @@ class TravelDetailPage extends StatelessWidget {
                   indent: 10,
                   endIndent: 20,
                 ),
-
                 Row(
                   mainAxisAlignment: MainAxisAlignment.spaceBetween,
                   children: [
                     Column(
                       children: [
                         Container(
-                          margin: EdgeInsets.only(left: 8.0, top: 8.0, bottom: 8.0),
+                          margin:
+                              EdgeInsets.only(left: 8.0, top: 8.0, bottom: 8.0),
                           child: Text(
                             "Museu do Louvre",
                             style: TextStyles.textBlack,
@@ -144,7 +143,7 @@ class TravelDetailPage extends StatelessWidget {
                       children: [
                         Container(
                           margin: EdgeInsets.only(right: 10.0),
-                          child:Icon(
+                          child: Icon(
                             Icons.info_outline,
                             color: AppColors.primary,
                             size: 26.0,
@@ -152,7 +151,7 @@ class TravelDetailPage extends StatelessWidget {
                         ),
                         Container(
                           margin: EdgeInsets.only(right: 10.0),
-                          child:Icon(
+                          child: Icon(
                             Icons.close,
                             color: AppColors.primary,
                             size: 26.0,
@@ -160,7 +159,6 @@ class TravelDetailPage extends StatelessWidget {
                         ),
                       ],
                     ),
-                    
                   ],
                 ),
                 Divider(
@@ -168,7 +166,6 @@ class TravelDetailPage extends StatelessWidget {
                   indent: 10,
                   endIndent: 20,
                 ),
-
                 Spacer(),
                 Row(
                   mainAxisAlignment: MainAxisAlignment.start,

@@ -1,7 +1,7 @@
 import 'package:arrivederci/shared/Constants.dart';
 import 'package:arrivederci/shared/models/place_model.dart';
 import 'package:arrivederci/shared/themes/app_colors.dart';
-import 'package:arrivederci/shared/widgets/footer/app_footer.dart';
+import 'package:arrivederci/shared/widgets/app_footer/app_footer_widget.dart';
 import 'package:arrivederci/shared/themes/app_text_styles.dart';
 import 'package:flutter/material.dart';
 
