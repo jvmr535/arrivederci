@@ -1,6 +1,6 @@
 import 'package:arrivederci/shared/themes/app_colors.dart';
 import 'package:arrivederci/shared/widgets/location_search/location_search_widget.dart';
-import 'package:arrivederci/shared/widgets/footer/app_footer.dart';
+import 'package:arrivederci/shared/widgets/app_footer/app_footer_widget.dart';
 import 'package:arrivederci/shared/widgets/navigation_drawer/navigation_drawer_widget.dart';
 import 'package:flutter/material.dart';
 

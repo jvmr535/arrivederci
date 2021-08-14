@@ -139,8 +139,7 @@ class _RegisterState extends State<Register> {
                                           ScaffoldMessenger.of(context)
                                               .showSnackBar(
                                             const SnackBar(
-                                              content:
-                                                  Text("Cadastro bem sucedido"),
+                                              content: Text("Campos vazios"),
                                             ),
                                           ),
                                           result.user!.updateDisplayName(_name),
