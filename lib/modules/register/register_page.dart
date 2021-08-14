@@ -102,11 +102,15 @@ class _RegisterState extends State<Register> {
                     onPressed: () async {
                       try {
                         if (_password == _confirmPassword) {
-                          UserCredential result =
-                              await auth.createUserWithEmailAndPassword(
-                                  email: _email, password: _password);
-                          User user = result.user!;
-                          user.updateDisplayName(_name);
+                          await auth
+                              .createUserWithEmailAndPassword(
+                                  email: _email, password: _password)
+                              .then(
+                                (UserCredential result) => {
+                                  result.user!.updateDisplayName(_name),
+                                  Navigator.of(context).pushNamed(LOGIN_SCREEN)
+                                },
+                              );
                         } else {
                           print("As senhas não correspondem");
                         }

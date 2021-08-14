@@ -76,11 +76,14 @@ class _LoginState extends State<Login> {
                     ),
                     onPressed: () async {
                       try {
-                        await auth.signInWithEmailAndPassword(
-                            email: _email, password: _password);
-
-                        Navigator.pop(context);
-                        Navigator.of(context).pushNamed(HOME_SCREEN);
+                        await auth
+                            .signInWithEmailAndPassword(
+                                email: _email, password: _password)
+                            .then(
+                              (_) => {
+                                Navigator.of(context).pushNamed(HOME_SCREEN)
+                              },
+                            );
                       } catch (e) {
                         print("Deu errado");
                       }
