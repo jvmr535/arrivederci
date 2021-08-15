@@ -22,19 +22,21 @@ class _MyTravelItinerariesState extends State<MyTravelItineraries> {
         .onValue
         .listen(
       (event) {
-        final response = event.snapshot.value;
-        for (final item in response.keys) {
-          setState(
-            () {
-              _travelItineraries = [
-                ..._travelItineraries,
-                TravelItinerary(
-                    uid: item,
-                    name: response[item]["name"],
-                    description: response[item]["description"]),
-              ];
-            },
-          );
+        if (this.mounted) {
+          final response = event.snapshot.value;
+          for (final item in response.keys) {
+            setState(
+              () {
+                _travelItineraries = [
+                  ..._travelItineraries,
+                  TravelItinerary(
+                      uid: item,
+                      name: response[item]["name"],
+                      description: response[item]["description"]),
+                ];
+              },
+            );
+          }
         }
       },
     );

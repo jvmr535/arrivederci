@@ -17,77 +17,82 @@ class _ForgotPasswordState extends State<ForgotPassword> {
     final size = MediaQuery.of(context).size;
     return Scaffold(
       backgroundColor: AppColors.white,
-      body: Stack(children: [
-        Center(
-          child: Container(
+      body: Stack(
+        children: [
+          Center(
+            child: Container(
               child: SingleChildScrollView(
-            child: Column(
-              mainAxisAlignment: MainAxisAlignment.center,
-              children: [
-                Text(
-                  "RECUPERAÇÃO DE SENHA",
-                  style: TextStyles.pageTitle,
-                ),
-                SizedBox(height: 80.0),
-                Container(
-                  width: size.width * 0.8,
-                  child: TextField(
-                    onChanged: (value) {
-                      setState(() {
-                        _email = value.trim();
-                      });
-                    },
-                    decoration: InputDecoration(
-                      labelText: 'Email',
-                      border: OutlineInputBorder(),
+                child: Column(
+                  mainAxisAlignment: MainAxisAlignment.center,
+                  children: [
+                    Text(
+                      "RECUPERAÇÃO DE SENHA",
+                      style: TextStyles.pageTitle,
                     ),
-                  ),
-                ),
-                SizedBox(height: 20.0),
-                Container(
-                  width: size.width * 0.8,
-                  height: 40,
-                  child: ElevatedButton(
-                    style: ElevatedButton.styleFrom(
-                      primary: AppColors.primary, // background
-                      onPrimary: Colors.white, // foreground
+                    SizedBox(height: 80.0),
+                    Container(
+                      width: size.width * 0.8,
+                      child: TextField(
+                        onChanged: (value) {
+                          setState(() {
+                            _email = value.trim();
+                          });
+                        },
+                        decoration: InputDecoration(
+                          labelText: 'Email',
+                          border: OutlineInputBorder(),
+                        ),
+                      ),
                     ),
-                    onPressed: () async {
-                      try {
-                        auth.sendPasswordResetEmail(email: _email).then((_) => {
-                              Navigator.of(context).pop(),
-                              Navigator.of(context).pushNamed(LOGIN_SCREEN)
-                            });
-                      } catch (e) {
-                        print(e);
-                      }
-                    },
-                    child: Text('ENVIAR'),
-                  ),
-                ),
-                SizedBox(height: 10.0),
-                Container(
-                  width: size.width * 0.8,
-                  height: 40,
-                  child: ElevatedButton(
-                    style: ElevatedButton.styleFrom(
-                      primary: AppColors.white,
-                      onPrimary: AppColors.primary,
-                      side: BorderSide(color: AppColors.primary),
+                    SizedBox(height: 20.0),
+                    Container(
+                      width: size.width * 0.8,
+                      height: 40,
+                      child: ElevatedButton(
+                        style: ElevatedButton.styleFrom(
+                          primary: AppColors.primary, // background
+                          onPrimary: Colors.white, // foreground
+                        ),
+                        onPressed: () async {
+                          try {
+                            auth.sendPasswordResetEmail(email: _email).then(
+                                (_) => {
+                                      Navigator.of(context).pop(),
+                                      Navigator.of(context)
+                                          .pushNamed(LOGIN_SCREEN)
+                                    });
+                          } catch (e) {
+                            print(e);
+                          }
+                        },
+                        child: Text('ENVIAR'),
+                      ),
                     ),
-                    onPressed: () {
-                      Navigator.pop(context);
-                      Navigator.of(context).pushNamed(LOGIN_SCREEN);
-                    },
-                    child: Text('VOLTAR'),
-                  ),
+                    SizedBox(height: 10.0),
+                    Container(
+                      width: size.width * 0.8,
+                      height: 40,
+                      child: ElevatedButton(
+                        style: ElevatedButton.styleFrom(
+                          primary: AppColors.white,
+                          onPrimary: AppColors.primary,
+                          side: BorderSide(color: AppColors.primary),
+                        ),
+                        onPressed: () {
+                          Navigator.pop(context);
+                          Navigator.of(context).pushNamed(LOGIN_SCREEN);
+                        },
+                        child: Text('VOLTAR'),
+                      ),
+                    ),
+                    SizedBox(height: 10.0)
+                  ],
                 ),
-                SizedBox(height: 10.0)
-              ],
+              ),
             ),
-          )),
-        )
-      ]),
+          )
+        ],
+      ),
     );
   }
 }

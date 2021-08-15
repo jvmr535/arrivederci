@@ -18,4 +18,7 @@ String
 
 String
     // ignore: non_constant_identifier_names
-    GOOGLE_API_KEY = "AIzaSyCARtvgT7eQVYhJ57NeI4jYn3kX5tPUZXg";
+    GOOGLE_API_KEY = "AIzaSyCARtvgT7eQVYhJ57NeI4jYn3kX5tPUZXg",
+    // ignore: non_constant_identifier_names
+    GOOGLE_API_IMAGE =
+        "https://maps.googleapis.com/maps/api/place/photo?maxwidth=400&photoreference=";

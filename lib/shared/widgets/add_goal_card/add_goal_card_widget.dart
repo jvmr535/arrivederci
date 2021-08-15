@@ -3,6 +3,7 @@ import 'package:arrivederci/shared/models/place_model.dart';
 import 'package:arrivederci/shared/themes/app_colors.dart';
 import 'package:arrivederci/shared/widgets/app_footer/app_footer_widget.dart';
 import 'package:arrivederci/shared/themes/app_text_styles.dart';
+import 'package:arrivederci/shared/widgets/select_itinerary_list/select_itinerary_list_widget.dart';
 import 'package:flutter/material.dart';
 
 class AddGoalCard extends StatelessWidget {
@@ -10,8 +11,21 @@ class AddGoalCard extends StatelessWidget {
 
   AddGoalCard({Key? key, required this.place}) : super(key: key);
   final apiKey = GOOGLE_API_KEY;
+
   @override
   Widget build(BuildContext context) {
+    void _showDialog() {
+      showDialog(
+        context: context,
+        builder: (BuildContext context) => AlertDialog(
+          title: const Text('Selecione o roteiro'),
+          content: SelectItineraryList(
+            place: place,
+          ),
+        ),
+      );
+    }
+
     final size = MediaQuery.of(context).size;
     return Scaffold(
       appBar: AppBar(
@@ -26,9 +40,6 @@ class AddGoalCard extends StatelessWidget {
             child: SingleChildScrollView(
               child: Column(
                 children: [
-                  SizedBox(
-                    height: size.height * 0.05,
-                  ),
                   ListTile(
                     title: Text(
                       this.place.name,
@@ -39,14 +50,14 @@ class AddGoalCard extends StatelessWidget {
                     subtitle: Text(this.place.address),
                   ),
                   Image.network(
-                    'https://maps.googleapis.com/maps/api/place/photo?maxwidth=400&photoreference=${this.place.photo}&key=$apiKey',
+                    '$GOOGLE_API_IMAGE${this.place.photo}&key=$apiKey',
                     width: size.width,
                     height: size.height * 0.4,
                   ),
                   Text("Avaliação: ${this.place.rating}"),
                   TextButton(
                     onPressed: () {
-                      print("teste");
+                      _showDialog();
                     },
                     child: Text(
                       "+ ADICIONAR AO ROTEIRO",
