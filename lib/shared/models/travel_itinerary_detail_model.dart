@@ -1,8 +1,10 @@
+import 'package:arrivederci/shared/models/place_model.dart';
+
 class TravelItinerary {
   String uid;
   String name;
   String description;
-  String? places;
+  List<Place>? places;
 
   TravelItinerary({
     required this.uid,
@@ -13,6 +15,6 @@ class TravelItinerary {
 
   @override
   String toString() {
-    return 'Place(Uid: $uid,Nome : $name, descrição: $description, places: $places)';
+    return 'Travel Itinerary(Uid: $uid,Nome : $name, descrição: $description, places: $places)';
   }
 }

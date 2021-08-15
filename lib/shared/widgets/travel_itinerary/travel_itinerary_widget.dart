@@ -13,65 +13,63 @@ class TravelItineraryCard extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     final size = MediaQuery.of(context).size;
-    return Scaffold(
-      body: Center(
-        child: Card(
-          child: Container(
-            width: size.width * 0.9,
-            height: 200,
-            child: Column(
-              children: [
-                ListTile(
-                  title: Text(
-                    this.travelItinerary.name,
-                    style: TextStyles.textBlack,
-                  ),
-                ),
-                Container(
-                  margin: EdgeInsets.only(
-                      top: 20.0, bottom: 20.0, left: 20.0, right: 20.0),
-                  child: Text(this.travelItinerary.description),
-                ),
-                Container(
-                  alignment: FractionalOffset.center,
-                  child: Row(
-                    mainAxisAlignment: MainAxisAlignment.end,
-                    children: [
-                      Container(
-                        margin: EdgeInsets.only(bottom: 10.0, right: 30.0),
-                        child: TextButton(
-                          onPressed: () {
-                            Navigator.push(
-                              context,
-                              MaterialPageRoute(
-                                builder: (context) => TravelDetailPage(),
-                              ),
-                            );
-                          },
-                          child: Text(
-                            "ACESSAR",
-                            style: TextStyle(color: AppColors.primary),
-                          ),
-                        ),
-                      ),
-                      Container(
-                        margin: EdgeInsets.only(bottom: 10.0, right: 30.0),
-                        child: TextButton(
-                          onPressed: () {
-                            print("teste");
-                          },
-                          child: Text(
-                            "EXCLUIR",
-                            style: TextStyle(color: AppColors.primary),
-                          ),
-                        ),
-                      ),
-                    ],
-                  ),
-                )
-              ],
+    return Card(
+      child: Container(
+        width: size.width * 0.9,
+        height: 200,
+        child: Column(
+          children: [
+            ListTile(
+              title: Text(
+                this.travelItinerary.name,
+                style: TextStyles.textBlack,
+              ),
             ),
-          ),
+            Container(
+              margin: EdgeInsets.only(
+                  top: 20.0, bottom: 20.0, left: 20.0, right: 20.0),
+              child: Text(this.travelItinerary.description),
+            ),
+            Container(
+              alignment: FractionalOffset.center,
+              child: Row(
+                mainAxisAlignment: MainAxisAlignment.end,
+                children: [
+                  Container(
+                    margin: EdgeInsets.only(bottom: 10.0, right: 30.0),
+                    child: TextButton(
+                      onPressed: () {
+                        Navigator.push(
+                          context,
+                          MaterialPageRoute(
+                            builder: (context) => TravelDetailPage(
+                              travelItineraryUid: travelItinerary.uid,
+                            ),
+                          ),
+                        );
+                      },
+                      child: Text(
+                        "ACESSAR",
+                        style: TextStyle(color: AppColors.primary),
+                      ),
+                    ),
+                  ),
+                  Container(
+                    margin: EdgeInsets.only(bottom: 10.0, right: 30.0),
+                    child: TextButton(
+                      onPressed: () {
+                        print("teste");
+                      },
+                      child: Text(
+                        "EXCLUIR",
+                        style: TextStyle(color: AppColors.primary),
+                      ),
+                    ),
+                  ),
+                ],
+              ),
+            )
+          ],
         ),
       ),
     );

@@ -1,11 +1,13 @@
 class Place {
+  String? uid;
   String name;
   String address;
   String rating;
   String photo;
 
   Place(
-      {required this.name,
+      {this.uid,
+      required this.name,
       required this.address,
       required this.rating,
       required this.photo});
