@@ -15,15 +15,11 @@ class _MyTravelItinerariesState extends State<MyTravelItineraries> {
   List travelIntinerariesData() {
     TravelItinerary ti1 = TravelItinerary(
         name: "Viagem para a França",
-        photo:
-            "Aap_uEDlXIPdOwkCyPVJ4U5cVtEZd0vc75dXiVsg31dhe8Ge7rTat4BtufHmS8G5ZFOQODxsqbV--YvMHywMQ40aFbnLBwONgyCstS-8Y5fnqTFmB9H57MPJpQsSWlfeCYOIxb-415lRNarUAMNpDNFl_lu0uwIt-JIitJ7APFUq5SP_AZFD",
         description:
             "Lorem Ipsum is simply dummy text of the printing and typesetting industry.",
         places: []);
     TravelItinerary ti2 = TravelItinerary(
         name: "Viagem para a Italia",
-        photo:
-            "Aap_uEA9yON3uHS1Yh3w3N9W24mxkzyXkug3Jbl_1MvHbMbIm0DmA6D-LnNjRBXKDtYeE8HJ6cG0dXsr2-3-ZJayVtmJpz63wp8tzXTsgLTpT9LecWQJ4cJrLXpH9DwNNQ51PLc-uzAaQRqp_wBBH2K9VTfwLDJ5Vb6h8jfCRZuO5nhVhHkh",
         description:
             "Lorem Ipsum is simply dummy text of the printing and typesetting industry.",
         places: []);
@@ -44,11 +40,18 @@ class _MyTravelItinerariesState extends State<MyTravelItineraries> {
       body: ListView.builder(
         itemCount: travelItinerary.length,
         itemBuilder: (context, index) {
-          return Container(
-            height: 500,
-            child: TravelItineraryCard(
-              travelItinerary: travelItinerary[index],
-            ),
+          return Column(
+            children: [
+              SizedBox(
+                height: 30,
+              ),
+              Container(
+                height: 200,
+                child: TravelItineraryCard(
+                  travelItinerary: travelItinerary[index],
+                ),
+              ),
+            ],
           );
         },
       ),

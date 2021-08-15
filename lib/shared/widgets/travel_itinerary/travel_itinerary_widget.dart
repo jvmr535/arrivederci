@@ -21,7 +21,7 @@ class TravelItineraryCard extends StatelessWidget {
         child: Card(
           child: Container(
             width: size.width * 0.9,
-            height: 500,
+            height: 200,
             child: Column(
               children: [
                 ListTile(
@@ -29,11 +29,6 @@ class TravelItineraryCard extends StatelessWidget {
                     this.travelItinerary.name,
                     style: TextStyles.textBlack,
                   ),
-                ),
-                Image.network(
-                  'https://maps.googleapis.com/maps/api/place/photo?maxwidth=400&photoreference=${this.travelItinerary.photo}&key=$apiKey',
-                  width: size.width,
-                  height: 300,
                 ),
                 Container(
                   margin: EdgeInsets.only(
@@ -57,7 +52,7 @@ class TravelItineraryCard extends StatelessWidget {
                             );
                           },
                           child: Text(
-                            "EDITAR",
+                            "ACESSAR",
                             style: TextStyle(color: AppColors.primary),
                           ),
                         ),
