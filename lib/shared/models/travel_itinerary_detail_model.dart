@@ -4,11 +4,12 @@ class TravelItinerary {
   String description;
   String? places;
 
-  TravelItinerary(
-      {required this.uid,
-      required this.name,
-      required this.description,
-      this.places});
+  TravelItinerary({
+    required this.uid,
+    required this.name,
+    required this.description,
+    this.places,
+  });
 
   @override
   String toString() {

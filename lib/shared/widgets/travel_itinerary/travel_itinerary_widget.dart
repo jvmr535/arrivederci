@@ -4,15 +4,12 @@ import 'package:arrivederci/shared/themes/app_colors.dart';
 import 'package:arrivederci/shared/themes/app_text_styles.dart';
 import 'package:flutter/material.dart';
 
-import '../../Constants.dart';
-
 class TravelItineraryCard extends StatelessWidget {
   final TravelItinerary travelItinerary;
 
   TravelItineraryCard({Key? key, required this.travelItinerary})
       : super(key: key);
 
-  final apiKey = GOOGLE_API_KEY;
   @override
   Widget build(BuildContext context) {
     final size = MediaQuery.of(context).size;
