@@ -19,7 +19,7 @@ class _LocationSearchState extends State<LocationSearch> {
   Future searchLocalization() async {
     try {
       final response = await http.get(Uri.parse(
-          "https://maps.googleapis.com/maps/api/place/findplacefromtext/json?input=${_location}&inputtype=textquery&fields=photos,formatted_address,name,rating,opening_hours&key=$apiKey"));
+          "https://maps.googleapis.com/maps/api/place/findplacefromtext/json?input=$_location&inputtype=textquery&fields=photos,formatted_address,name,rating,opening_hours&key=$apiKey"));
 
       if (jsonDecode(response.body)['status'] != "ZERO_RESULTS") {
         return Place(

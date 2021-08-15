@@ -1,5 +1,3 @@
-import 'package:arrivederci/shared/models/place_model.dart';
-
 class TravelItinerary {
   String uid;
   String name;
