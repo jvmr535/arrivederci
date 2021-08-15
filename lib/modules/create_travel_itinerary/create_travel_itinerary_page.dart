@@ -12,7 +12,36 @@ class CreateTravelItinerary extends StatefulWidget {
 
 class _CreateTravelItineraryState extends State<CreateTravelItinerary> {
   final auth = FirebaseAuth.instance;
-  String _travelItinerary = "";
+  String _travelItineraryName = "";
+  String _travelItineraryDescription = "";
+
+  Future setTravelItinerary(
+      String travelItineraryName, String travelItineraryDescription) async {
+    try {
+      await FirebaseDatabase.instance
+          .reference()
+          .child("users/${auth.currentUser!.uid}/travelItineraries/")
+          .push()
+          .set(
+        {
+          "name": travelItineraryName,
+          "description": travelItineraryDescription
+        },
+      );
+      ScaffoldMessenger.of(context).showSnackBar(
+        const SnackBar(
+          content: Text("Roteiro criado com sucesso!"),
+        ),
+      );
+    } catch (e) {
+      ScaffoldMessenger.of(context).showSnackBar(
+        const SnackBar(
+          content: Text("Erro ao criar roteiro"),
+        ),
+      );
+    }
+  }
+
   @override
   Widget build(BuildContext context) {
     final size = MediaQuery.of(context).size;
@@ -38,11 +67,26 @@ class _CreateTravelItineraryState extends State<CreateTravelItinerary> {
                     child: TextFormField(
                       onChanged: (value) {
                         setState(() {
-                          _travelItinerary = value.trim();
+                          _travelItineraryName = value.trim();
                         });
                       },
                       decoration: InputDecoration(
                         labelText: 'Nome do roteiro',
+                        border: OutlineInputBorder(),
+                      ),
+                    ),
+                  ),
+                  SizedBox(height: 10.0),
+                  Container(
+                    width: size.width * 0.8,
+                    child: TextFormField(
+                      onChanged: (value) {
+                        setState(() {
+                          _travelItineraryDescription = value.trim();
+                        });
+                      },
+                      decoration: InputDecoration(
+                        labelText: 'Descrição do roteiro',
                         border: OutlineInputBorder(),
                       ),
                     ),
@@ -57,25 +101,8 @@ class _CreateTravelItineraryState extends State<CreateTravelItinerary> {
                         onPrimary: Colors.white, // foreground
                       ),
                       onPressed: () async {
-                        try {
-                          await FirebaseDatabase.instance
-                              .reference()
-                              .child(
-                                  "users/${auth.currentUser!.uid}/itineraries/")
-                              .push()
-                              .set({"name": _travelItinerary});
-                          ScaffoldMessenger.of(context).showSnackBar(
-                            const SnackBar(
-                              content: Text("Roteiro criado com sucesso!"),
-                            ),
-                          );
-                        } catch (e) {
-                          ScaffoldMessenger.of(context).showSnackBar(
-                            const SnackBar(
-                              content: Text("Erro ao criar roteiro"),
-                            ),
-                          );
-                        }
+                        await setTravelItinerary(
+                            _travelItineraryName, _travelItineraryDescription);
                       },
                       child: Text('Criar'),
                     ),
