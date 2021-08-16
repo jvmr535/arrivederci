@@ -27,22 +27,20 @@ class _PlaceDetailsState extends State<PlaceDetails> {
 
   @override
   Widget build(BuildContext context) {
-    final size = MediaQuery.of(context).size;
     final apiKey = GOOGLE_API_KEY;
     return Container(
-      height: size.height * 0.5,
       child: SingleChildScrollView(
         child: Column(
           children: [
             Text(this.widget.place.address),
             SizedBox(
-              height: size.height * 0.05,
+              height: 15,
             ),
             Image.network(
               '$GOOGLE_API_IMAGE${this.widget.place.photo}&key=$apiKey',
             ),
             SizedBox(
-              height: size.height * 0.02,
+              height: 15,
             ),
             Text("Avaliação: ${this.widget.place.rating}"),
             TextButton(
