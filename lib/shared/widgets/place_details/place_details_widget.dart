@@ -49,6 +49,7 @@ class _PlaceDetailsState extends State<PlaceDetails> {
                     .child(
                         "users/${_auth.currentUser!.uid}/travelItineraries/$travelItineraryUid/places/${place.uid}")
                     .remove();
+                Navigator.of(context).pop();
                 ScaffoldMessenger.of(context).showSnackBar(
                   const SnackBar(
                     content: Text("O local foi excluido"),
