@@ -22,6 +22,7 @@ class _TravelDetailPageState extends State<TravelDetailPage> {
 
   final _dataBase = FirebaseDatabase.instance.reference();
   final _auth = FirebaseAuth.instance;
+  List<Place> _places = [];
   TravelItinerary _travelItinerary =
       TravelItinerary(uid: "", name: "", description: "", places: []);
 
@@ -30,38 +31,34 @@ class _TravelDetailPageState extends State<TravelDetailPage> {
         .child(
             "users/${_auth.currentUser!.uid}/travelItineraries/$travelItineraryUid")
         .onValue
-        .listen(
-      (event) {
-        if (this.mounted) {
-          final response = event.snapshot.value;
-          setState(
-            () {
-              _travelItinerary.uid = travelItineraryUid;
-              _travelItinerary.name = response["name"];
-            },
+        .listen((event) {
+      if (mounted) {
+        final response = event.snapshot.value;
+        setState(
+          () {
+            _travelItinerary.uid = travelItineraryUid;
+            _travelItinerary.name = response["name"];
+          },
+        );
+        List<Place> places = [];
+        for (final item in response["places"].keys) {
+          places.add(
+            Place(
+                uid: item,
+                name: response["places"][item]["name"],
+                address: response["places"][item]["address"],
+                rating: response["places"][item]["rating"],
+                photo: response["places"][item]["photo"]),
           );
-          List<Place> _places = [];
-          for (final item in response["places"].keys) {
-            setState(
-              () {
-                _places = [
-                  ..._places,
-                  Place(
-                      uid: item,
-                      name: response["places"][item]["name"],
-                      address: response["places"][item]["address"],
-                      rating: response["places"][item]["rating"],
-                      photo: response["places"][item]["photo"]),
-                ];
-              },
-            );
-          }
-          setState(() {
-            _travelItinerary.places = _places;
-          });
         }
-      },
-    );
+        setState(() {
+          _places = places;
+        });
+        setState(() {
+          _travelItinerary.places = _places;
+        });
+      }
+    });
   }
 
   @override

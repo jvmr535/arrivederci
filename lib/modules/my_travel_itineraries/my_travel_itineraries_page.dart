@@ -20,26 +20,21 @@ class _MyTravelItinerariesState extends State<MyTravelItineraries> {
     _dataBase
         .child("users/${_auth.currentUser!.uid}/travelItineraries")
         .onValue
-        .listen(
-      (event) {
-        if (this.mounted) {
-          final response = event.snapshot.value;
-          for (final item in response.keys) {
-            setState(
-              () {
-                _travelItineraries = [
-                  ..._travelItineraries,
-                  TravelItinerary(
-                      uid: item,
-                      name: response[item]["name"],
-                      description: response[item]["description"]),
-                ];
-              },
-            );
-          }
+        .listen((event) {
+      if (mounted) {
+        final response = event.snapshot.value;
+        List<TravelItinerary> travelItineraries = [];
+        for (final item in response.keys) {
+          travelItineraries.add(TravelItinerary(
+              uid: item,
+              name: response[item]["name"],
+              description: response[item]["description"]));
         }
-      },
-    );
+        setState(() {
+          _travelItineraries = travelItineraries;
+        });
+      }
+    });
   }
 
   @override

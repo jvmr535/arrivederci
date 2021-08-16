@@ -15,30 +15,31 @@ class _SelectItineraryListState extends State<SelectItineraryList> {
   final Place place;
   _SelectItineraryListState(this.place);
 
-  List<TravelItinerary> _travelItineraries = [];
   final _dataBase = FirebaseDatabase.instance.reference();
   final _auth = FirebaseAuth.instance;
+  List<TravelItinerary> _travelItineraries = [];
 
   void _getTravelItineraries() {
     _dataBase
         .child("users/${_auth.currentUser!.uid}/travelItineraries")
         .onValue
         .listen((event) {
-      if (this.mounted) {
+      if (mounted) {
         final response = event.snapshot.value;
+        List<TravelItinerary> travelItineraries = [];
         for (final item in response.keys) {
-          setState(
-            () {
-              _travelItineraries = [
-                ..._travelItineraries,
-                TravelItinerary(
-                    uid: item,
-                    name: response[item]["name"],
-                    description: response[item]["description"]),
-              ];
-            },
+          travelItineraries.add(
+            TravelItinerary(
+                uid: item,
+                name: response[item]["name"],
+                description: response[item]["description"]),
           );
         }
+        setState(
+          () {
+            _travelItineraries = travelItineraries;
+          },
+        );
       }
     });
   }
