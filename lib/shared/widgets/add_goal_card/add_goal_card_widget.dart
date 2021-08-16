@@ -34,38 +34,36 @@ class AddGoalCard extends StatelessWidget {
       ),
       body: Center(
         child: Card(
-          child: Container(
-            width: size.width * 0.9,
-            height: size.height * 0.7,
-            child: SingleChildScrollView(
-              child: Column(
-                children: [
-                  ListTile(
-                    title: Text(
-                      this.place.name,
-                      style: TextStyles.textBlack,
-                    ),
+          elevation: 5,
+          margin: EdgeInsets.only(left: 20, right: 20),
+          child: SingleChildScrollView(
+            child: Column(
+              children: [
+                ListTile(
+                  title: Text(
+                    this.place.name,
+                    style: TextStyles.textBlack,
                   ),
-                  ListTile(
-                    subtitle: Text(this.place.address),
+                ),
+                ListTile(
+                  subtitle: Text(this.place.address),
+                ),
+                Image.network(
+                  '$GOOGLE_API_IMAGE${this.place.photo}&key=$apiKey',
+                  width: size.width,
+                  height: size.height * 0.4,
+                ),
+                Text("Avaliação: ${this.place.rating}"),
+                TextButton(
+                  onPressed: () {
+                    _showDialog();
+                  },
+                  child: Text(
+                    "+ ADICIONAR AO ROTEIRO",
+                    style: TextStyle(color: AppColors.primary),
                   ),
-                  Image.network(
-                    '$GOOGLE_API_IMAGE${this.place.photo}&key=$apiKey',
-                    width: size.width,
-                    height: size.height * 0.4,
-                  ),
-                  Text("Avaliação: ${this.place.rating}"),
-                  TextButton(
-                    onPressed: () {
-                      _showDialog();
-                    },
-                    child: Text(
-                      "+ ADICIONAR AO ROTEIRO",
-                      style: TextStyle(color: AppColors.primary),
-                    ),
-                  )
-                ],
-              ),
+                )
+              ],
             ),
           ),
         ),
