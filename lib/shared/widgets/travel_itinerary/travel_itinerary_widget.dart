@@ -13,6 +13,7 @@ class TravelItineraryCard extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     final size = MediaQuery.of(context).size;
+
     return Card(
       child: Container(
         width: size.width * 0.9,
@@ -58,7 +59,15 @@ class TravelItineraryCard extends StatelessWidget {
                     margin: EdgeInsets.only(bottom: 10.0, right: 30.0),
                     child: TextButton(
                       onPressed: () {
-                        print("teste");
+                        //         _dataBase
+                        //     .child(
+                        //         "users/${_auth.currentUser!.uid}/travelItineraries/$travelItineraryUid/places/${place.uid}")
+                        //     .remove();
+                        // ScaffoldMessenger.of(context).showSnackBar(
+                        //   const SnackBar(
+                        //     content: Text("O local foi excluido"),
+                        // ),
+                        // );
                       },
                       child: Text(
                         "EXCLUIR",
