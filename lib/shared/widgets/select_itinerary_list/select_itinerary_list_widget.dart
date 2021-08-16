@@ -78,6 +78,11 @@ class _SelectItineraryListState extends State<SelectItineraryList> {
             onTap: () {
               _setOnTravelItinerary(place, _travelItineraries[index].uid);
               Navigator.of(context).pop();
+              ScaffoldMessenger.of(context).showSnackBar(
+                const SnackBar(
+                  content: Text("O local foi adicionado ao roteiro"),
+                ),
+              );
             },
           );
         },

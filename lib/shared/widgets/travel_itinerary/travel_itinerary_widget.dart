@@ -57,7 +57,15 @@ class TravelItineraryCard extends StatelessWidget {
                   Container(
                     child: TextButton(
                       onPressed: () {
-                        print("teste");
+                        //         _dataBase
+                        //     .child(
+                        //         "users/${_auth.currentUser!.uid}/travelItineraries/$travelItineraryUid/places/${place.uid}")
+                        //     .remove();
+                        // ScaffoldMessenger.of(context).showSnackBar(
+                        //   const SnackBar(
+                        //     content: Text("O local foi excluido"),
+                        // ),
+                        // );
                       },
                       child: Text(
                         "EXCLUIR",
