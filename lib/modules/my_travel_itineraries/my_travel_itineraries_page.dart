@@ -61,10 +61,9 @@ class _MyTravelItinerariesState extends State<MyTravelItineraries> {
           return Column(
             children: [
               SizedBox(
-                height: 30,
+                height: 25,
               ),
               Container(
-                height: 200,
                 child: TravelItineraryCard(
                   travelItinerary: _travelItineraries[index],
                 ),
