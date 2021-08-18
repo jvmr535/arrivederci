@@ -1,3 +1,4 @@
+import 'package:arrivederci/shared/Constants.dart';
 import 'package:arrivederci/shared/themes/app_colors.dart';
 import 'package:arrivederci/shared/widgets/app_footer/app_footer_widget.dart';
 import 'package:arrivederci/shared/themes/app_text_styles.dart';
@@ -31,26 +32,6 @@ class _SettingsState extends State<Settings> {
       ScaffoldMessenger.of(context).showSnackBar(
         const SnackBar(
           content: Text("Erro ao alterar o nome!"),
-        ),
-      );
-    }
-  }
-
-  Future setPassword(String email, GlobalKey<FormState> emailKey) async {
-    try {
-      if (emailKey.currentState!.validate()) {
-        await auth.currentUser!.updateEmail(email);
-
-        ScaffoldMessenger.of(context).showSnackBar(
-          const SnackBar(
-            content: Text("E-mail Alterado com sucesso!"),
-          ),
-        );
-      }
-    } catch (e) {
-      ScaffoldMessenger.of(context).showSnackBar(
-        const SnackBar(
-          content: Text("Erro ao alterar o e-mail!"),
         ),
       );
     }
@@ -122,7 +103,11 @@ class _SettingsState extends State<Settings> {
                       onPrimary: Colors.white, // foreground
                     ),
                     onPressed: () async {
-                      await setName(_name, _formNameKey);
+                      await setName(_name, _formNameKey).then((_) => {
+                            Navigator.of(context).pop(),
+                            Navigator.of(context).pushNamed(HOME_SCREEN)
+                          });
+                      ;
                     },
                     child: Text('ALTERAR'),
                   ),
