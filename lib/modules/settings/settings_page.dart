@@ -1,4 +1,3 @@
-import 'package:arrivederci/shared/Constants.dart';
 import 'package:arrivederci/shared/themes/app_colors.dart';
 import 'package:arrivederci/shared/widgets/app_footer/app_footer_widget.dart';
 import 'package:arrivederci/shared/themes/app_text_styles.dart';
@@ -27,6 +26,7 @@ class _SettingsState extends State<Settings> {
             content: Text("Nome Alterado com sucesso!"),
           ),
         );
+        Navigator.of(context).pop();
       }
     } catch (e) {
       ScaffoldMessenger.of(context).showSnackBar(
@@ -103,11 +103,7 @@ class _SettingsState extends State<Settings> {
                       onPrimary: Colors.white, // foreground
                     ),
                     onPressed: () async {
-                      await setName(_name, _formNameKey).then((_) => {
-                            Navigator.of(context).pop(),
-                            Navigator.of(context).pushNamed(HOME_SCREEN)
-                          });
-                      ;
+                      await setName(_name, _formNameKey);
                     },
                     child: Text('ALTERAR'),
                   ),
