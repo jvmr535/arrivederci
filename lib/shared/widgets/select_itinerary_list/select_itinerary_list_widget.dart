@@ -1,3 +1,4 @@
+import 'package:arrivederci/shared/Constants.dart';
 import 'package:arrivederci/shared/models/place_model.dart';
 import 'package:arrivederci/shared/models/travel_itinerary_detail_model.dart';
 import 'package:firebase_auth/firebase_auth.dart';
@@ -79,6 +80,7 @@ class _SelectItineraryListState extends State<SelectItineraryList> {
             onTap: () {
               _setOnTravelItinerary(place, _travelItineraries[index].uid);
               Navigator.of(context).pop();
+              Navigator.of(context).pushNamed(MY_TRAVEL_ITINERARY);
               ScaffoldMessenger.of(context).showSnackBar(
                 const SnackBar(
                   content: Text("O local foi adicionado ao roteiro"),
