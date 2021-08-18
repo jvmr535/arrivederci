@@ -1,7 +1,6 @@
 import 'package:arrivederci/shared/Constants.dart';
 import 'package:arrivederci/shared/themes/app_colors.dart';
 import 'package:arrivederci/shared/widgets/app_footer/app_footer_widget.dart';
-import 'package:arrivederci/shared/themes/app_text_styles.dart';
 import 'package:firebase_auth/firebase_auth.dart';
 import 'package:firebase_database/firebase_database.dart';
 import 'package:flutter/material.dart';
@@ -36,6 +35,7 @@ class _CreateTravelItineraryState extends State<CreateTravelItinerary> {
             content: Text("Roteiro criado com sucesso!"),
           ),
         );
+        Navigator.of(context).pushNamed(MY_TRAVEL_ITINERARY);
       }
     } catch (e) {
       ScaffoldMessenger.of(context).showSnackBar(
@@ -108,10 +108,7 @@ class _CreateTravelItineraryState extends State<CreateTravelItinerary> {
                       ),
                       onPressed: () async {
                         await setTravelItinerary(
-                            _travelItineraryName, _travelItineraryDescription).then((_) => {
-                            Navigator.of(context).pop(),
-                            Navigator.of(context).pushNamed(MY_TRAVEL_ITINERARY)
-                          });
+                            _travelItineraryName, _travelItineraryDescription);
                       },
                       child: Text('Criar'),
                     ),
