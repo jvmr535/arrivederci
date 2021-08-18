@@ -14,8 +14,7 @@ class Settings extends StatefulWidget {
 class _SettingsState extends State<Settings> {
   final auth = FirebaseAuth.instance;
   final _formNameKey = GlobalKey<FormState>();
-  final _formSenhalKey = GlobalKey<FormState>();
-  String _name = "", _password = "", _confirmPassword = "";
+  String _name = "";
 
   Future setName(String userName, GlobalKey<FormState> nameKey) async {
     try {
