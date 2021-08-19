@@ -1,6 +1,6 @@
+import 'package:arrivederci/shared/Constants.dart';
 import 'package:arrivederci/shared/themes/app_colors.dart';
 import 'package:arrivederci/shared/widgets/app_footer/app_footer_widget.dart';
-import 'package:arrivederci/shared/themes/app_text_styles.dart';
 import 'package:firebase_auth/firebase_auth.dart';
 import 'package:firebase_database/firebase_database.dart';
 import 'package:flutter/material.dart';
@@ -12,27 +12,31 @@ class CreateTravelItinerary extends StatefulWidget {
 
 class _CreateTravelItineraryState extends State<CreateTravelItinerary> {
   final auth = FirebaseAuth.instance;
+  final _formNameKey = GlobalKey<FormState>();
   String _travelItineraryName = "";
   String _travelItineraryDescription = "";
 
   Future setTravelItinerary(
       String travelItineraryName, String travelItineraryDescription) async {
     try {
-      await FirebaseDatabase.instance
-          .reference()
-          .child("users/${auth.currentUser!.uid}/travelItineraries/")
-          .push()
-          .set(
-        {
-          "name": travelItineraryName,
-          "description": travelItineraryDescription
-        },
-      );
-      ScaffoldMessenger.of(context).showSnackBar(
-        const SnackBar(
-          content: Text("Roteiro criado com sucesso!"),
-        ),
-      );
+      if (_formNameKey.currentState!.validate()) {
+        await FirebaseDatabase.instance
+            .reference()
+            .child("users/${auth.currentUser!.uid}/travelItineraries/")
+            .push()
+            .set(
+          {
+            "name": travelItineraryName,
+            "description": travelItineraryDescription
+          },
+        );
+        ScaffoldMessenger.of(context).showSnackBar(
+          const SnackBar(
+            content: Text("Roteiro criado com sucesso!"),
+          ),
+        );
+        Navigator.of(context).pushNamed(MY_TRAVEL_ITINERARY);
+      }
     } catch (e) {
       ScaffoldMessenger.of(context).showSnackBar(
         const SnackBar(
@@ -54,17 +58,19 @@ class _CreateTravelItineraryState extends State<CreateTravelItinerary> {
         Center(
           child: Container(
             child: Form(
+              key: _formNameKey,
               child: Column(
                 mainAxisAlignment: MainAxisAlignment.center,
                 children: [
-                  Text(
-                    "Criar roteiro",
-                    style: TextStyles.pageTitle,
-                  ),
-                  SizedBox(height: 80.0),
                   Container(
                     width: size.width * 0.8,
                     child: TextFormField(
+                      validator: (value) {
+                        if (value == null || value.isEmpty) {
+                          return "Por favor preencha o campo de Nome do Roteiro";
+                        }
+                        return null;
+                      },
                       onChanged: (value) {
                         setState(() {
                           _travelItineraryName = value.trim();

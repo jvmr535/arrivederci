@@ -19,6 +19,18 @@ class PlaceDetails extends StatefulWidget {
 }
 
 class _PlaceDetailsState extends State<PlaceDetails> {
+  Future remove() async {
+    _dataBase
+        .child(
+            "users/${_auth.currentUser!.uid}/travelItineraries/$travelItineraryUid/places/${place.uid}")
+        .remove();
+    ScaffoldMessenger.of(context).showSnackBar(
+      const SnackBar(
+        content: Text("O local foi excluido"),
+      ),
+    );
+  }
+
   final travelItineraryUid;
   final Place place;
   _PlaceDetailsState(this.travelItineraryUid, this.place);
@@ -44,18 +56,11 @@ class _PlaceDetailsState extends State<PlaceDetails> {
             ),
             Text("Avaliação: ${this.widget.place.rating}"),
             TextButton(
-              onPressed: () {
-                _dataBase
-                    .child(
-                        "users/${_auth.currentUser!.uid}/travelItineraries/$travelItineraryUid/places/${place.uid}")
-                    .remove();
-                Navigator.of(context).pop();
-                ScaffoldMessenger.of(context).showSnackBar(
-                  const SnackBar(
-                    content: Text("O local foi excluido"),
-                  ),
-                );
-                Navigator.of(context).pop();
+              onPressed: () async {
+                await remove().then((_) => {
+                      Navigator.of(context).pop(),
+                      Navigator.of(context).pushNamed(HOME_SCREEN)
+                    });
               },
               child: Text(
                 "Remover",
